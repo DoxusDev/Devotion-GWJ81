@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://hqmtfhgvqf1t"]
+[gd_scene load_steps=14 format=3 uid="uid://hqmtfhgvqf1t"]
 
 [ext_resource type="Texture2D" uid="uid://b70jc4hhj8gl7" path="res://assets/Objects/flag.png" id="1_76ss4"]
+[ext_resource type="Script" uid="uid://jjsi7twxtxsk" path="res://scripts/flag.gd" id="1_q38m2"]
+[ext_resource type="AudioStream" uid="uid://cteh3uym3yuue" path="res://assets/Sounds/pop.ogg" id="3_tjkec"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_32e5v"]
 atlas = ExtResource("1_76ss4")
@@ -75,8 +77,13 @@ animations = [{
 
 [node name="Flag" type="Node2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_q38m2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aofb0")
 autoplay = "default"
 frame_progress = 0.351181
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tjkec")
+bus = &"SFX"

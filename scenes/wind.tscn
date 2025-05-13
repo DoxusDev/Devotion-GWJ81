@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://cn4mmp6ho1kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdwks"]
+size = Vector2(575, 24)
+
+[sub_resource type="Gradient" id="Gradient_wx8gj"]
+offsets = PackedFloat32Array(0, 0.482014, 1)
+colors = PackedColorArray(0.643137, 0.623529, 0.631373, 0.333333, 0.905348, 1.80972e-05, 0.612309, 1, 0.592157, 0.584314, 0.572549, 0.341176)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p78np"]
+gradient = SubResource("Gradient_wx8gj")
+width = 1
+height = 32
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_yawee"]
+colors = PackedColorArray(1, 1, 1, 0.0980392, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2kodj"]
+gradient = SubResource("Gradient_yawee")
+
+[sub_resource type="Gradient" id="Gradient_4pwos"]
+offsets = PackedFloat32Array(0, 0.482422, 0.992188)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5ly3m"]
+gradient = SubResource("Gradient_4pwos")
+
+[sub_resource type="Curve" id="Curve_sq2e8"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.098513, 60.4267), 0.0, 0.0, 0, 0, Vector2(0.204461, -5.78114), 0.0, 0.0, 0, 0, Vector2(0.302974, 56.8479), 0.0, 0.0, 0, 0, Vector2(0.401487, -7.57054), 0.0, 0.0, 0, 0, Vector2(0.498141, 58.6373), 0.0, 0.0, 0, 0, Vector2(0.583643, -7.57054), 0.0, 0.0, 0, 0, Vector2(0.674721, 60.4267), 0.0, 0.0, 0, 0, Vector2(0.747212, -5.78114), 0.0, 0.0, 0, 0, Vector2(0.845725, 58.6373), 0.0, 0.0, 0, 0, Vector2(0.931227, -11.1494), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 12
+
+[sub_resource type="CurveTexture" id="CurveTexture_7a7jx"]
+curve = SubResource("Curve_sq2e8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y4rkh"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1000, 1)
+gravity = Vector3(100, 20, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 6.0
+tangential_accel_curve = SubResource("CurveTexture_7a7jx")
+damping_max = 100.0
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_5ly3m")
+color_initial_ramp = SubResource("GradientTexture1D_2kodj")
+
+[node name="Wind" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rdwks")
+debug_color = Color(0.616228, 0.434373, 0.816194, 0.42)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
+amount = 50
+texture = SubResource("GradientTexture2D_p78np")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 0.5
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_y4rkh")

@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const ACCELERATION = 2000
-const FRICTION = 2000
 const JUMP_VELOCITY = -600.0
 const MAX_JUMP_TIME = 0.2
 const GRAVITY = 1500
@@ -15,6 +14,7 @@ const WALL_JUMP_X_SPEED = 250
 var flags_left = max_flags
 var last_flag_position = Vector2.ZERO
 var coyote_time_left = 0.0
+var friction = 2000
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2d
 @onready var flag_scene = preload("res://scenes/flag.tscn")
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	
 	move_and_slide()
 

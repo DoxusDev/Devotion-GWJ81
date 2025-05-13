@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsufv0joyyik"]
+
+[ext_resource type="Texture2D" uid="uid://bm5kg17ilrie5" path="res://assets/Tilesets/tileset_snow.png" id="1_mp1lo"]
+[ext_resource type="Script" uid="uid://c5uym7pkerjvw" path="res://scripts/ice_platform.gd" id="1_ra4rc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra4rc"]
+size = Vector2(128, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed8f0"]
+size = Vector2(128, 1.5)
+
+[node name="IcePlatform" type="StaticBody2D"]
+script = ExtResource("1_ra4rc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_mp1lo")
+region_enabled = true
+region_rect = Rect2(112.027, 79.9711, 63.973, 9.36843)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_ra4rc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AreaFrictionCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -11.25)
+shape = SubResource("RectangleShape2D_ed8f0")
+debug_color = Color(0.725179, 0.39294, 0.701667, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

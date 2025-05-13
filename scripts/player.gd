@@ -5,9 +5,11 @@ const ACCELERATION = 2000
 const FRICTION = 2000
 const JUMP_VELOCITY = -600.0
 const MAX_JUMP_TIME = 0.2
-const GRAVITY = 1800
-const FALL_GRAVITY = 3000
+const GRAVITY = 1500
+const FALL_GRAVITY = 2500
 const COYOTE_TIME = 0.1
+const WALL_JUMP_FORCE = 500
+const WALL_JUMP_X_SPEED = 250
 
 @export var max_flags = 100
 var flags_left = max_flags
@@ -40,10 +42,12 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and coyote_time_left > 0.0:
-		#effects.visible = true
-		#effects.play("jump_dust")
 		velocity.y = JUMP_VELOCITY
 		coyote_time_left = 0.0
+	
+	if Input.is_action_pressed("down") and is_on_floor():
+		# Fuerza una pequeña caída para atravesar la plataforma
+		global_position.y += 2
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

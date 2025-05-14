@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c42w7eqsnxqfn"]
+
+[ext_resource type="Script" uid="uid://d2fufeb8aw1x4" path="res://scripts/ground_fire_platform.gd" id="1_k020r"]
+[ext_resource type="Texture2D" uid="uid://plscjh4batyk" path="res://assets/Tilesets/tileset_lava.png" id="1_n43wi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k020r"]
+size = Vector2(60, 8)
+
+[node name="GroundFirePlatform" type="AnimatableBody2D"]
+script = ExtResource("1_k020r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_n43wi")
+region_enabled = true
+region_rect = Rect2(96.0757, 15.9305, 31.9697, 16.0985)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_k020r")

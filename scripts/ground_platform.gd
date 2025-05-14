@@ -24,3 +24,13 @@ func start_movement():
 	elif move_vertical:
 		tween.tween_property(self, "position:y", position.y + move_distance, move_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property(self, "position:y", position.y - move_distance, move_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		body.can_flag = false
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		body.can_flag = true

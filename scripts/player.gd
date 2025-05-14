@@ -15,6 +15,7 @@ var flags_left = max_flags
 var last_flag_position = Vector2.ZERO
 var coyote_time_left = 0.0
 var friction = 2000
+var can_flag = true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2d
 @onready var flag_scene = preload("res://scenes/flag.tscn")
@@ -62,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true
 		effects.flip_h = true
 	
-	if Input.is_action_just_pressed("flag") and is_on_floor() and flags_left > 0:
+	if Input.is_action_just_pressed("flag") and is_on_floor() and flags_left > 0 and can_flag:
 		is_flagging = true
 		animated_sprite_2d.play("flag")
 		await get_tree().create_timer(0.3).timeout

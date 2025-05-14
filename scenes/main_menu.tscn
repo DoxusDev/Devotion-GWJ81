@@ -4,9 +4,8 @@
 [ext_resource type="FontFile" uid="uid://clk4n6iwjbvc" path="res://assets/Fonts/Oswald-Bold.ttf" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://vvsi2rhpwn3m" path="res://scenes/wind_sound.tscn" id="3_bqqt6"]
 
-[sub_resource type="Animation" id="Animation_ekxnf"]
-resource_name = "fade_in"
-length = 3.0
+[sub_resource type="Animation" id="Animation_bqqt6"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,10 +13,10 @@ tracks/0/path = NodePath("FadeBackground:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,8 +31,9 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_bqqt6"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_ekxnf"]
+resource_name = "fade_in"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -41,10 +41,10 @@ tracks/0/path = NodePath("FadeBackground:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

@@ -231,6 +231,7 @@ size = Vector2(22, 45)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+max_flags = 3
 metadata/_edit_group_ = true
 
 [node name="Effects" type="AnimatedSprite2D" parent="."]

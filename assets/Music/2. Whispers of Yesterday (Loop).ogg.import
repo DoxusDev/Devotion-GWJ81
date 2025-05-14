@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://mfpk0lxhpmyy"
+path="res://.godot/imported/2. Whispers of Yesterday (Loop).ogg-bbd487c98a70bb66d3b75ee2f03b9e2a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Music/2. Whispers of Yesterday (Loop).ogg"
+dest_files=["res://.godot/imported/2. Whispers of Yesterday (Loop).ogg-bbd487c98a70bb66d3b75ee2f03b9e2a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

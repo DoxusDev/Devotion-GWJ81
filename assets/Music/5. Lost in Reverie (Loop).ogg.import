@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1pg5vmbwj8tw"
+path="res://.godot/imported/5. Lost in Reverie (Loop).ogg-4dcbaceadea0e96d62dfe21070f81120.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Music/5. Lost in Reverie (Loop).ogg"
+dest_files=["res://.godot/imported/5. Lost in Reverie (Loop).ogg-4dcbaceadea0e96d62dfe21070f81120.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

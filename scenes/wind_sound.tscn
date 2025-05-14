@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vvsi2rhpwn3m"]
+
+[ext_resource type="AudioStream" uid="uid://b57763qb7kjbd" path="res://assets/Sounds/wind1.mp3" id="1_85gfy"]
+
+[node name="WindSound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_85gfy")
+autoplay = true
+bus = &"SFX"

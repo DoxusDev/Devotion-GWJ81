@@ -1,6 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://4xyjs67nykco"]
+[gd_scene load_steps=8 format=3 uid="uid://4xyjs67nykco"]
 
+[ext_resource type="Script" uid="uid://t6227p1llovq" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://clk4n6iwjbvc" path="res://assets/Fonts/Oswald-Bold.ttf" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://vvsi2rhpwn3m" path="res://scenes/wind_sound.tscn" id="3_bqqt6"]
+
+[sub_resource type="Animation" id="Animation_ekxnf"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeBackground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bqqt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeBackground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeBackground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
+_data = {
+&"RESET": SubResource("Animation_bqqt6"),
+&"fade_in": SubResource("Animation_ekxnf"),
+&"fade_out": SubResource("Animation_wu84c")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,8 +89,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,16 +100,50 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0383972, 0.0383971, 0.0383972, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="GameTitle" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 130.0
-offset_right = 745.0
-offset_bottom = 279.0
+offset_left = 361.0
+offset_top = 11.0
+offset_right = 909.0
+offset_bottom = 457.0
+theme_override_constants/line_separation = -70
 theme_override_fonts/normal_font = ExtResource("1_l6cm7")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
-text = "ECHO"
+text = "ECHO'S FATE"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StartText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 518.0
+offset_right = 661.0
+offset_bottom = 548.0
+theme_override_fonts/normal_font = ExtResource("1_l6cm7")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[pulse]START[/pulse]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FadeBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wu84c")
+}
+autoplay = "fade_in"
+
+[node name="WindSound" parent="." instance=ExtResource("3_bqqt6")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

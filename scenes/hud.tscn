@@ -91,7 +91,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5n1hp")
 animation = &"flag"
 autoplay = "flag"
-frame_progress = 0.0366242
+frame_progress = 0.350392
 
 [node name="FlagCount" type="RichTextLabel" parent="."]
 offset_left = 1193.0

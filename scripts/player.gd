@@ -10,7 +10,7 @@ const COYOTE_TIME = 0.1
 const WALL_JUMP_FORCE = 500
 const WALL_JUMP_X_SPEED = 250
 
-@export var max_flags = 100
+@export var max_flags = 5
 var flags_left = max_flags
 var last_flag_position = Vector2.ZERO
 var coyote_time_left = 0.0
@@ -49,6 +49,8 @@ func _physics_process(delta: float) -> void:
 		# Fuerza una pequeña caída para atravesar la plataforma
 		global_position.y += 2
 	
+	if Input.is_action_pressed("teleport") and is_on_floor():
+		global_position = last_flag_position
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
@@ -60,12 +62,12 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true
 		effects.flip_h = true
 	
-	if Input.is_action_just_pressed("flag") and is_on_floor():  # "interact" es tu acción E
+	if Input.is_action_just_pressed("flag") and is_on_floor() and flags_left > 0:
 		is_flagging = true
 		animated_sprite_2d.play("flag")
 		await get_tree().create_timer(0.3).timeout
 		plant_flag()
-		velocity.x = 0  # Detiene al personaje, opcional
+		velocity.x = 0
 		return
 	
 	if not is_on_floor():
@@ -113,3 +115,6 @@ func _get_gravity(velocity):
 	if velocity.y < 0:
 		return GRAVITY
 	return FALL_GRAVITY
+
+func get_flags() -> int:
+	return flags_left

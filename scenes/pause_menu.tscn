@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ykd435pgmv4i"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_1s2dm"]
+[ext_resource type="FontFile" uid="uid://bisxlfleqqvse" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5d2l8"]
+[ext_resource type="AudioStream" uid="uid://dannehcaemyxl" path="res://assets/sounds/discard-sound-effect-221455.mp3" id="5_71k7c"]
+[ext_resource type="AudioStream" uid="uid://bcmpewm7nub1i" path="res://assets/sounds/casual-click-pop-ui-10-262126.mp3" id="6_cmnsq"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_1s2dm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.709804)
+
+[node name="ContinueBtn" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 232.0
+offset_right = 767.0
+offset_bottom = 320.0
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitBtn")
+focus_neighbor_bottom = NodePath("../QuitBtn")
+theme_override_fonts/font = ExtResource("2_5d2l8")
+text = "Continue"
+
+[node name="QuitBtn" type="Button" parent="."]
+offset_left = 510.0
+offset_top = 380.0
+offset_right = 766.0
+offset_bottom = 468.0
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../ContinueBtn")
+focus_neighbor_bottom = NodePath("../ContinueBtn")
+theme_override_fonts/font = ExtResource("2_5d2l8")
+text = "Exit"
+
+[node name="EnterPauseSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_71k7c")
+bus = &"SFX"
+
+[node name="ChangeFocusBtnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_cmnsq")
+bus = &"SFX"
+
+[connection signal="focus_entered" from="ContinueBtn" to="." method="_on_continue_btn_focus_entered"]
+[connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="focus_entered" from="QuitBtn" to="." method="_on_quit_btn_focus_entered"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]

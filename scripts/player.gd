@@ -82,8 +82,10 @@ func _physics_process(delta: float) -> void:
 		effects.visible = false
 		effects.stop()
 	
-	if direction:
+	if direction != 0:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
+	elif friction < 100:  # Está en hielo, no frena solo
+		pass  # No modificamos velocity.x, sigue deslizándose
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	

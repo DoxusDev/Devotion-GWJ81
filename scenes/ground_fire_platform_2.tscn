@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://24uj3ss7kxbl"]
+
+[ext_resource type="Texture2D" uid="uid://plscjh4batyk" path="res://assets/Tilesets/tileset_lava.png" id="1_83hqg"]
+[ext_resource type="Script" uid="uid://cpydva6fwflde" path="res://scripts/ground_fire_platform_2.gd" id="1_moagk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moagk"]
+size = Vector2(95, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnipp"]
+size = Vector2(95, 1)
+
+[node name="GroundFirePlatform2" type="AnimatableBody2D"]
+script = ExtResource("1_moagk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_83hqg")
+region_enabled = true
+region_rect = Rect2(175.985, 15.9526, 48.0819, 11.1179)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7.5)
+shape = SubResource("RectangleShape2D_moagk")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -12.5)
+shape = SubResource("RectangleShape2D_fnipp")
+debug_color = Color(0.754425, 0.329296, 0.799811, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmp2k175r24dr"]
+
+[ext_resource type="Script" uid="uid://csf74bwhpe036" path="res://scripts/cloud_platform.gd" id="1_1dbd0"]
+[ext_resource type="Texture2D" uid="uid://jo0pj7pet2q4" path="res://assets/Objects/cloud_platforms.png" id="1_75d3x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dbd0"]
+size = Vector2(132, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhhag"]
+size = Vector2(132, 1)
+
+[node name="CloudPlatform" type="AnimatableBody2D"]
+script = ExtResource("1_1dbd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_75d3x")
+region_enabled = true
+region_rect = Rect2(15.0284, 158.054, 65.8506, 18.071)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_1dbd0")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_rhhag")
+debug_color = Color(0.786512, 0.304374, 0.772888, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

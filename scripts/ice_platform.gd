@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		body.friction = 100
+		body.friction = 80
 		body.can_flag = false
 
 

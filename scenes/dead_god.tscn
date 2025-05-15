@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://cmxrtc44qc65r"]
+
+[ext_resource type="Texture2D" uid="uid://dw4n7lmhpajpq" path="res://assets/Deco/sun.png" id="1_yehyx"]
+[ext_resource type="Script" uid="uid://bdfv6bw3y3vg7" path="res://scripts/dead_god.gd" id="2_aucvq"]
+[ext_resource type="Texture2D" uid="uid://blsorliqvfcrb" path="res://assets/FX/bomb_explosion.png" id="2_y3jb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3jb3"]
+atlas = ExtResource("1_yehyx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aucvq"]
+atlas = ExtResource("1_yehyx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24tk2"]
+atlas = ExtResource("1_yehyx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_facw1"]
+atlas = ExtResource("1_yehyx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pm7j"]
+atlas = ExtResource("1_yehyx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn7sd"]
+atlas = ExtResource("1_yehyx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uau3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3jb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aucvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24tk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_facw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pm7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn7sd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yehyx"]
+radius = 11.0403
+
+[sub_resource type="Animation" id="Animation_y3jb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.673738, 0.0379779, 0.902276, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ta8ni"]
+resource_name = "dead_god_animation"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 9, 10, 16, 17, 23, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.673738, 0.0379779, 0.902276, 1), Color(0.67451, 0.0392157, 0.901961, 0.431373), Color(0.674467, 0.0391469, 0.901978, 0.462963), Color(0.67451, 0.0392157, 0.901961, 1), Color(0.67444, 0.0391032, 0.901989, 1), Color(0.67451, 0.0392157, 0.901961, 0.462745), Color(0.674317, 0.0389062, 0.90204, 0.597059)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 6, 9, 12, 15, 18, 21, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 1.5708, 2.35619, 3.14159, 3.92699, 4.71239, 5.49779, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_baau1"]
+_data = {
+&"RESET": SubResource("Animation_y3jb3"),
+&"dead_god_animation": SubResource("Animation_ta8ni")
+}
+
+[node name="DeadGod" type="AnimatedSprite2D"]
+modulate = Color(0.673738, 0.0379779, 0.902276, 1)
+scale = Vector2(12.5, 12.5)
+sprite_frames = SubResource("SpriteFrames_uau3o")
+autoplay = "default"
+frame_progress = 0.490877
+script = ExtResource("2_aucvq")
+
+[node name="LightEffect" type="Sprite2D" parent="."]
+modulate = Color(0.676495, 0.231893, 0.560803, 1)
+z_index = -1
+position = Vector2(-0.5, -0.1)
+texture = ExtResource("2_y3jb3")
+region_enabled = true
+region_rect = Rect2(96.0684, 1.00034, 31.8418, 30.9997)
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yehyx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_baau1")
+}
+autoplay = "dead_god_animation"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

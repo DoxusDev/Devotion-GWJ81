@@ -8,7 +8,7 @@ const COYOTE_TIME = 0.1
 const WALL_JUMP_FORCE = 500
 const WALL_JUMP_X_speed = 250
 
-@export var max_flags = 3
+@export var max_flags = 4
 var flags_left = max_flags
 var last_flag_position = Vector2.ZERO
 var coyote_time_left = 0.0
@@ -20,6 +20,7 @@ var can_flag = true
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2d
 @onready var flag_scene = preload("res://scenes/flag.tscn")
 @onready var effects: AnimatedSprite2D = $Effects
+@onready var teleport_sound: AudioStreamPlayer2D = $TeleportSound
 
 var current_flag: Node = null
 var is_flagging = false
@@ -51,7 +52,9 @@ func _physics_process(delta: float) -> void:
 		global_position.y += 2
 	
 	if Input.is_action_pressed("teleport") and is_on_floor() and not last_flag_position == Vector2.ZERO:
+		teleport_sound.play()
 		global_position = last_flag_position
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")

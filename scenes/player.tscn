@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c78xuymspfwkj"]
+[gd_scene load_steps=38 format=3 uid="uid://c78xuymspfwkj"]
 
 [ext_resource type="Script" uid="uid://damk6ts1i1nuv" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://clp4u2524hfdk" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="2_dqkch"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://caqbn6hwqra3r" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Jump_8.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://buuetx3mmxlcs" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Attack1_4.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://e3kfxdwd8p5q" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Run_6.png" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://bvb56yvi01krg" path="res://assets/Sounds/transitional-swipe-211688.ogg" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
 atlas = ExtResource("2_fjrip")
@@ -246,13 +247,15 @@ frame_progress = 1.0
 [node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_f1ej7")
-animation = &"run"
+animation = &"jump"
 autoplay = "idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 7.5)
 shape = SubResource("RectangleShape2D_uwrxv")
+
+[node name="TeleportSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_smehm")
+volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimatedSprite2d" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -4,45 +4,48 @@
 [ext_resource type="Texture2D" uid="uid://b70jc4hhj8gl7" path="res://assets/Objects/flag.png" id="1_oo0fn"]
 [ext_resource type="FontFile" uid="uid://bisxlfleqqvse" path="res://assets/Fonts/PixelOperator8-Bold.ttf" id="2_5ysmq"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ysmq"]
+atlas = ExtResource("1_oo0fn")
+region = Rect2(0, 0, 32, 34)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(32, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo2fv"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(64, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_047uy"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(96, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pdws"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(128, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd3ao"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(160, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0i1j5"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(160, 0, 32, 32)
+region = Rect2(192, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mphia"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(192, 0, 32, 32)
+region = Rect2(224, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0m4u7"]
 atlas = ExtResource("1_oo0fn")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_apjy4"]
-atlas = ExtResource("1_oo0fn")
-region = Rect2(256, 0, 32, 32)
+region = Rect2(256, 0, 32, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5n1hp"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ysmq")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6fi6k")
 }, {
@@ -66,9 +69,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0m4u7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_apjy4")
 }],
 "loop": true,
 "name": &"flag",
@@ -79,6 +79,7 @@ animations = [{
 script = ExtResource("1_5ysmq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = 1130.0
 offset_top = 25.0
 offset_right = 1246.0

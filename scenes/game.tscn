@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://ber65bpgj31uh"]
+[gd_scene load_steps=83 format=4 uid="uid://ber65bpgj31uh"]
 
 [ext_resource type="Script" uid="uid://cpxurf0o22dvn" path="res://scripts/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://518ogvbxkfjl" path="res://assets/Tilesets/tileset_forest.png" id="2_lbhrr"]
@@ -23,6 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://dgxin6ytwystw" path="res://assets/Music/8. Shattered Dreams (Loop).ogg" id="15_ir15t"]
 [ext_resource type="AudioStream" uid="uid://mfpk0lxhpmyy" path="res://assets/Music/2. Whispers of Yesterday (Loop).ogg" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://cmxrtc44qc65r" path="res://scenes/dead_god.tscn" id="20_1kice"]
+[ext_resource type="Texture2D" uid="uid://e3kfxdwd8p5q" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Run_6.png" id="20_gxtfn"]
+[ext_resource type="Texture2D" uid="uid://b70jc4hhj8gl7" path="res://assets/Objects/flag.png" id="20_wljb1"]
+[ext_resource type="Texture2D" uid="uid://caqbn6hwqra3r" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Jump_8.png" id="21_twgab"]
 [ext_resource type="Texture2D" uid="uid://b7mabiuv3arhy" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/1.png" id="24_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://cui3uvfqy0krx" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/2.png" id="25_qouja"]
 [ext_resource type="Texture2D" uid="uid://d3eqnrdpqkhyl" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/3.png" id="26_wljb1"]
@@ -30,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://dgcyxlyie0p7h" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/5.png" id="28_js0lu"]
 [ext_resource type="Texture2D" uid="uid://bs2llvyhvegkv" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/6.png" id="29_gxtfn"]
 [ext_resource type="AudioStream" uid="uid://ckclykndt7t1t" path="res://assets/Sounds/synth-bass-drop-impact-14706.mp3" id="29_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://cygrx18xv86i" path="res://assets/UI/Keyboard Letters and Symbols.png" id="31_qouja"]
+[ext_resource type="Texture2D" uid="uid://cvdkmmoyv2f2s" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster.png" id="33_js0lu"]
+[ext_resource type="Texture2D" uid="uid://dhk5010epgqww" path="res://assets/UI/arrow.png" id="34_gxtfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
 texture = ExtResource("2_lbhrr")
@@ -520,6 +526,92 @@ sources/3 = SubResource("TileSetAtlasSource_kvuet")
 sources/4 = SubResource("TileSetAtlasSource_ca42v")
 sources/5 = SubResource("TileSetAtlasSource_bhx41")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nepv3"]
+atlas = ExtResource("20_gxtfn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7025r"]
+atlas = ExtResource("20_gxtfn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4url"]
+atlas = ExtResource("20_gxtfn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ool0"]
+atlas = ExtResource("20_gxtfn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr1ej"]
+atlas = ExtResource("20_gxtfn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05nbr"]
+atlas = ExtResource("20_gxtfn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sl42"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nepv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7025r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4url")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ool0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr1ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05nbr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js0lu"]
+atlas = ExtResource("34_gxtfn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtfn"]
+atlas = ExtResource("34_gxtfn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
+atlas = ExtResource("34_gxtfn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02fa5"]
+atlas = ExtResource("34_gxtfn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nepv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js0lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxtfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twgab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02fa5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="Animation" id="Animation_p57ef"]
 length = 0.001
 tracks/0/type = "value"
@@ -988,6 +1080,212 @@ _data = {
 &"outro_third_zone": SubResource("Animation_sgl2t")
 }
 
+[sub_resource type="Animation" id="Animation_v2yb1"]
+resource_name = "keys_animation"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DownArrowKey:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(724, -581), Vector2(724, -571)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TeleportFlagTutorial/QKey:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(37.6, 1.9), Vector2(37.6, 5.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlagTutorial/EKey:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21.2, 2.8), Vector2(21.2, 5.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MoveTutorial/LeftArrowKey:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-8.5, 2), Vector2(-8.5, 8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MoveTutorial/DownArrowKey:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8.5, 2), Vector2(8.5, 8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MoveTutorial/RightArrowKey:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25.5, 2), Vector2(25.5, 8)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MoveTutorial/UpArrowKey:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8.5, -13), Vector2(8.5, -7)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("JumpTuto/UpArrowKey:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 3.5)]
+}
+
+[sub_resource type="Animation" id="Animation_js0lu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DownArrowKey:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(724, -581)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TeleportFlagTutorial/QKey:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(37.6, 1.9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlagTutorial/EKey:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(21.2, 2.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MoveTutorial/LeftArrowKey:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8.5, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MoveTutorial/DownArrowKey:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.5, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MoveTutorial/RightArrowKey:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25.5, 2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MoveTutorial/UpArrowKey:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.5, -13)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("JumpTuto/UpArrowKey:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gxtfn"]
+_data = {
+&"RESET": SubResource("Animation_js0lu"),
+&"keys_animation": SubResource("Animation_v2yb1")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
 size = Vector2(94, 19)
 
@@ -1214,8 +1512,114 @@ move_horizontal = true
 move_distance = 500
 move_time = 6.0
 
+[node name="DownArrowKey" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(724, -581)
+scale = Vector2(2, 2)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(16.1378, 0.817131, 14.8644, 13.9184)
+
+[node name="MoveTutorial" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(193, 524)
+scale = Vector2(2, 2)
+
+[node name="PlayerRunning" type="AnimatedSprite2D" parent="MoveTutorial"]
+position = Vector2(-37, -3)
+sprite_frames = SubResource("SpriteFrames_0sl42")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.3995
+
+[node name="LeftArrowKey" type="Sprite2D" parent="MoveTutorial"]
+position = Vector2(-8.5, 2)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(32.5881, 1.746, 13.8063, 12.5622)
+
+[node name="DownArrowKey" type="Sprite2D" parent="MoveTutorial"]
+position = Vector2(8.5, 2)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(16.7013, 1.63897, 13.5629, 12.4427)
+
+[node name="RightArrowKey" type="Sprite2D" parent="MoveTutorial"]
+position = Vector2(25.5, 2)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(48.4836, 1.63445, 13.7154, 12.8979)
+
+[node name="UpArrowKey" type="Sprite2D" parent="MoveTutorial"]
+position = Vector2(8.5, -13)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(0.769314, 2.03767, 13.4772, 12.1713)
+
+[node name="JumpTuto" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(480, 520)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="PlayerJumping" type="Sprite2D" parent="JumpTuto"]
+position = Vector2(-28.5, 0)
+texture = ExtResource("21_twgab")
+region_enabled = true
+region_rect = Rect2(66.9603, 8.20377, 23.1355, 23.7962)
+
+[node name="UpArrowKey" type="Sprite2D" parent="JumpTuto"]
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(0.769314, 2.03767, 13.4772, 12.1713)
+
+[node name="FlagTutorial" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(1083, 194.751)
+scale = Vector2(2, 2)
+
+[node name="FlagTuto" type="Sprite2D" parent="FlagTutorial"]
+texture = ExtResource("20_wljb1")
+region_enabled = true
+region_rect = Rect2(3.91254, 0, 23.4381, 34.0364)
+
+[node name="EKey" type="Sprite2D" parent="FlagTutorial"]
+position = Vector2(21.2, 2.8)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(64.9564, 33.7718, 13.4274, 12.6079)
+
+[node name="TeleportFlagTutorial" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(256, 101)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="PlayerTuto" type="Sprite2D" parent="TeleportFlagTutorial"]
+position = Vector2(-32.4, 0)
+texture = ExtResource("33_js0lu")
+
+[node name="FlagTuto" type="Sprite2D" parent="TeleportFlagTutorial"]
+position = Vector2(10.4, 0)
+texture = ExtResource("20_wljb1")
+region_enabled = true
+region_rect = Rect2(3.91254, 0, 23.4381, 34.0364)
+
+[node name="QKey" type="Sprite2D" parent="TeleportFlagTutorial"]
+position = Vector2(37.6, 1.9)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(0.386738, 65.3967, 14.6197, 12.9953)
+
+[node name="Arrow" type="AnimatedSprite2D" parent="TeleportFlagTutorial"]
+position = Vector2(-11.6, 3.6)
+sprite_frames = SubResource("SpriteFrames_nepv3")
+autoplay = "default"
+frame_progress = 0.874909
+
 [node name="Player" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(159, 673)
+max_flags = 4
 
 [node name="Corpses" type="Node2D" parent="."]
 
@@ -1259,6 +1663,7 @@ layer = 3
 visible = false
 
 [node name="FadeInOut" type="CanvasLayer" parent="Camera"]
+visible = false
 
 [node name="FadeBackground" type="ColorRect" parent="Camera/FadeInOut"]
 z_index = 1
@@ -1270,6 +1675,7 @@ color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [node name="FinalFade" type="CanvasLayer" parent="Camera"]
 layer = 2
+visible = false
 
 [node name="FinalFadeBackground" type="ColorRect" parent="Camera/FinalFade"]
 z_index = 2
@@ -1308,6 +1714,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_u5sy4")
 }
 autoplay = "fade_in"
+
+[node name="ControlEffects" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gxtfn")
+}
+autoplay = "keys_animation"
 
 [node name="MusicFirstZone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_trtic")

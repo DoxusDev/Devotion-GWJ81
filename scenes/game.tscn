@@ -1663,7 +1663,6 @@ layer = 3
 visible = false
 
 [node name="FadeInOut" type="CanvasLayer" parent="Camera"]
-visible = false
 
 [node name="FadeBackground" type="ColorRect" parent="Camera/FadeInOut"]
 z_index = 1
@@ -1675,7 +1674,6 @@ color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [node name="FinalFade" type="CanvasLayer" parent="Camera"]
 layer = 2
-visible = false
 
 [node name="FinalFadeBackground" type="ColorRect" parent="Camera/FinalFade"]
 z_index = 2

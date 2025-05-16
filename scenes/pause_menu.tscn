@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ykd435pgmv4i"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_1s2dm"]
-[ext_resource type="FontFile" uid="uid://bisxlfleqqvse" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5d2l8"]
-[ext_resource type="AudioStream" uid="uid://dannehcaemyxl" path="res://assets/sounds/discard-sound-effect-221455.mp3" id="5_71k7c"]
-[ext_resource type="AudioStream" uid="uid://bcmpewm7nub1i" path="res://assets/sounds/casual-click-pop-ui-10-262126.mp3" id="6_cmnsq"]
+[ext_resource type="FontFile" uid="uid://bisxlfleqqvse" path="res://assets/Fonts/PixelOperator8-Bold.ttf" id="2_5d2l8"]
+[ext_resource type="AudioStream" uid="uid://cteh3uym3yuue" path="res://assets/Sounds/pop.ogg" id="4_5d2l8"]
+[ext_resource type="AudioStream" uid="uid://dannehcaemyxl" path="res://assets/Sounds/discard-sound-effect-221455.mp3" id="5_71k7c"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -44,7 +44,7 @@ stream = ExtResource("5_71k7c")
 bus = &"SFX"
 
 [node name="ChangeFocusBtnSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_cmnsq")
+stream = ExtResource("4_5d2l8")
 bus = &"SFX"
 
 [connection signal="focus_entered" from="ContinueBtn" to="." method="_on_continue_btn_focus_entered"]

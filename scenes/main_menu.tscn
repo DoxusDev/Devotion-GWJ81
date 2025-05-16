@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://4xyjs67nykco"]
+[gd_scene load_steps=9 format=3 uid="uid://4xyjs67nykco"]
 
 [ext_resource type="Script" uid="uid://t6227p1llovq" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://clk4n6iwjbvc" path="res://assets/Fonts/Oswald-Bold.ttf" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://vvsi2rhpwn3m" path="res://scenes/wind_sound.tscn" id="3_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://ct8i8onnu6yy0" path="res://assets/Sounds/pause-piano-sound-40579.mp3" id="4_wu84c"]
 
 [sub_resource type="Animation" id="Animation_bqqt6"]
 length = 0.001
@@ -70,6 +71,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WindSound:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-40.0, 10.0]
+}
 
 [sub_resource type="Animation" id="Animation_wu84c"]
 resource_name = "fade_out"
@@ -122,19 +135,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0383972, 0.0383971, 0.0383972, 1)
+color = Color(0.0235294, 0.0235294, 0.0235294, 1)
 
 [node name="GameTitle" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 361.0
-offset_top = 11.0
-offset_right = 909.0
-offset_bottom = 457.0
+offset_left = 321.0
+offset_top = 36.0
+offset_right = 948.0
+offset_bottom = 546.0
 theme_override_constants/line_separation = -70
 theme_override_fonts/normal_font = ExtResource("1_l6cm7")
 theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
-text = "ECHO'S FATE"
+text = "[wave amp=50 freq=0.7]DEVOTION[/wave]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -148,7 +161,7 @@ offset_bottom = 548.0
 theme_override_fonts/normal_font = ExtResource("1_l6cm7")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[pulse]START[/pulse]"
+text = "[pulse freq=0.3]START[/pulse]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -170,5 +183,10 @@ autoplay = "fade_in"
 
 [node name="WindSound" parent="." instance=ExtResource("3_bqqt6")]
 volume_db = 10.0
+
+[node name="StartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wu84c")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

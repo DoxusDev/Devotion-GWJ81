@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dafom1u772qal" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Death_8.png" id="1_fowgs"]
 [ext_resource type="Script" uid="uid://d14yg0nbdtge5" path="res://scripts/corpse_sprite.gd" id="2_utent"]
-[ext_resource type="AudioStream" uid="uid://wg6yw663jkk3" path="res://assets/Sounds/vanish.ogg" id="3_tusyx"]
+[ext_resource type="AudioStream" uid="uid://cfak8f2orrqk" path="res://assets/Sounds/vanish2.ogg" id="3_tusyx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fowgs"]
 atlas = ExtResource("1_fowgs")

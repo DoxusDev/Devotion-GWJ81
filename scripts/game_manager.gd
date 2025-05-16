@@ -4,6 +4,7 @@ extends Node
 @onready var music_first_zone: AudioStreamPlayer = $"../MusicFirstZone"
 @onready var music_second_zone: AudioStreamPlayer = $"../MusicSecondZone"
 @onready var music_third_zone: AudioStreamPlayer = $"../MusicThirdZone"
+@onready var distortion_sound: AudioStreamPlayer = $"../DistortionSound"
 
 var in_second_zone = false
 var in_third_zone = false
@@ -35,6 +36,7 @@ func _on_area_2d_intro_final_zone_body_entered(body: Node2D) -> void:
 func _on_dead_god_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Engine.time_scale = 0.3
+		distortion_sound.play()
 		animation_player.play("ending")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

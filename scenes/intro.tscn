@@ -69,7 +69,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_yjqpq"]
 resource_name = "intro"
-length = 43.0
+length = 48.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,11 +77,11 @@ tracks/0/path = NodePath("RichTextLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3.03333, 12.5233, 21.5333, 30.5333),
+"times": PackedFloat32Array(0, 13.5, 24.5, 35.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["Hidden beyond the clouds, at the top of the coldest peak lies something not meant to be found...", "Many have climbed... none have returned the same.", "Now, a lone wanderer ascends.
-Seeking purpose, perhaps glory.", "But some things should remain buried.
+"values": ["Hidden beyond the clouds, at the top of the coldest peak lies something not meant to be found...", "Many have climbed... none have returned.", "Now, you, a lone wanderer ascends.
+Seeking a voice that calls you to climb.", "But some things should remain buried.
 And some paths, once taken... never lead back."]
 }
 tracks/1/type = "value"
@@ -91,10 +91,10 @@ tracks/1/path = NodePath("RichTextLabel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.03333, 5.03333, 11.0233, 12.5333, 14.0333, 20.0333, 21.5333, 23.0333, 29.0333, 30.5333, 32, 38, 40),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(3.03333, 5.03333, 11.0233, 13, 14, 16, 22, 24, 25, 27, 33, 35, 36, 38, 44, 46),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -103,7 +103,7 @@ tracks/2/path = NodePath("BackgroundFade:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 40, 43),
+"times": PackedFloat32Array(0, 3, 45, 48),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -115,7 +115,7 @@ tracks/3/path = NodePath("IntroMusic:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3, 38.6667, 43),
+"times": PackedFloat32Array(0, 3, 44, 47),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-40.0, 0.0, 0.0, -40.0]

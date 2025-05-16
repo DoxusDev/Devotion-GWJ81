@@ -8,7 +8,7 @@ const COYOTE_TIME = 0.1
 const WALL_JUMP_FORCE = 500
 const WALL_JUMP_X_speed = 250
 
-@export var max_flags = 5
+@export var max_flags = 3
 var flags_left = max_flags
 var last_flag_position = Vector2.ZERO
 var coyote_time_left = 0.0

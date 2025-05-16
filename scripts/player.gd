@@ -1,20 +1,20 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const ACCELERATION = 2000
 const JUMP_VELOCITY = -600.0
 const MAX_JUMP_TIME = 0.2
 const GRAVITY = 1500
 const FALL_GRAVITY = 2500
 const COYOTE_TIME = 0.1
 const WALL_JUMP_FORCE = 500
-const WALL_JUMP_X_SPEED = 250
+const WALL_JUMP_X_speed = 250
 
 @export var max_flags = 5
 var flags_left = max_flags
 var last_flag_position = Vector2.ZERO
 var coyote_time_left = 0.0
+var speed = 300.0
 var friction = 2000
+var acceleration = 2000
 var can_flag = true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2d
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		effects.stop()
 	
 	if direction != 0:
-		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
 	elif friction < 100:  # Está en hielo, no frena solo
 		pass  # No modificamos velocity.x, sigue deslizándose
 	else:

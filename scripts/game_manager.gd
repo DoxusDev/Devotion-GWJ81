@@ -31,7 +31,7 @@ func _on_area_2d_intro_third_zone_body_entered(body: Node2D) -> void:
 func _on_area_2d_intro_final_zone_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not in_final_zone:
 		animation_player.play("outro_third_zone")
-		in_third_zone = true
+		in_final_zone = true
 
 func _on_dead_god_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

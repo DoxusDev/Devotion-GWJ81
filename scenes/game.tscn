@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://ber65bpgj31uh"]
+[gd_scene load_steps=84 format=4 uid="uid://ber65bpgj31uh"]
 
 [ext_resource type="Script" uid="uid://cpxurf0o22dvn" path="res://scripts/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://518ogvbxkfjl" path="res://assets/Tilesets/tileset_forest.png" id="2_lbhrr"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://e3kfxdwd8p5q" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Run_6.png" id="20_gxtfn"]
 [ext_resource type="Texture2D" uid="uid://b70jc4hhj8gl7" path="res://assets/Objects/flag.png" id="20_wljb1"]
 [ext_resource type="Texture2D" uid="uid://caqbn6hwqra3r" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Jump_8.png" id="21_twgab"]
+[ext_resource type="Texture2D" uid="uid://cl6is26boalkf" path="res://assets/UI/Keyboard Extras.png" id="22_02fa5"]
 [ext_resource type="Texture2D" uid="uid://b7mabiuv3arhy" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/1.png" id="24_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://cui3uvfqy0krx" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/2.png" id="25_qouja"]
 [ext_resource type="Texture2D" uid="uid://d3eqnrdpqkhyl" path="res://assets/Backgrounds/clouds/3. NEW CLOUDS/3.png" id="26_wljb1"]
@@ -1178,6 +1179,30 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("JumpTuto/SpaceKey:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SKey:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(762, -581)]
+}
 
 [sub_resource type="Animation" id="Animation_v2yb1"]
 resource_name = "keys_animation"
@@ -1278,6 +1303,30 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 3.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("JumpTuto/SpaceKey:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, 0), Vector2(30, 3.5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SKey:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(762, -581), Vector2(762, -571)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxtfn"]
@@ -1520,6 +1569,14 @@ texture = ExtResource("31_qouja")
 region_enabled = true
 region_rect = Rect2(16.1378, 0.817131, 14.8644, 13.9184)
 
+[node name="SKey" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(762, -581)
+scale = Vector2(2, 2)
+texture = ExtResource("31_qouja")
+region_enabled = true
+region_rect = Rect2(33.0884, 65.7121, 12.9205, 12.3474)
+
 [node name="MoveTutorial" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(193, 524)
@@ -1560,7 +1617,6 @@ region_rect = Rect2(0.769314, 2.03767, 13.4772, 12.1713)
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(480, 520)
 scale = Vector2(2, 2)
-metadata/_edit_group_ = true
 
 [node name="PlayerJumping" type="Sprite2D" parent="JumpTuto"]
 position = Vector2(-28.5, 0)
@@ -1572,6 +1628,12 @@ region_rect = Rect2(66.9603, 8.20377, 23.1355, 23.7962)
 texture = ExtResource("31_qouja")
 region_enabled = true
 region_rect = Rect2(0.769314, 2.03767, 13.4772, 12.1713)
+
+[node name="SpaceKey" type="Sprite2D" parent="JumpTuto"]
+position = Vector2(30, 0)
+texture = ExtResource("22_02fa5")
+region_enabled = true
+region_rect = Rect2(65.1535, 34.0349, 29.9199, 12.0959)
 
 [node name="FlagTutorial" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)

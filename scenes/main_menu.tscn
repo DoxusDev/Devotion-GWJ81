@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://4xyjs67nykco"]
+[gd_scene load_steps=12 format=3 uid="uid://4xyjs67nykco"]
 
 [ext_resource type="Script" uid="uid://t6227p1llovq" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://clk4n6iwjbvc" path="res://assets/Fonts/Oswald-Bold.ttf" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://vvsi2rhpwn3m" path="res://scenes/wind_sound.tscn" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c4gwvxsrwrs74" path="res://assets/Backgrounds/white_bottom_fade.png" id="3_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://ct8i8onnu6yy0" path="res://assets/Sounds/pause-piano-sound-40579.mp3" id="4_wu84c"]
+[ext_resource type="PackedScene" uid="uid://cn4mmp6ho1kh" path="res://scenes/wind.tscn" id="5_8ln24"]
 
 [sub_resource type="Animation" id="Animation_bqqt6"]
 length = 0.001
@@ -42,6 +44,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [10.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WhiteBottomFade:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.258824)]
 }
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
@@ -112,9 +126,27 @@ tracks/1/keys = {
 "values": [10.0, -40.0]
 }
 
+[sub_resource type="Animation" id="Animation_oa1go"]
+resource_name = "bottom_fade_blink"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WhiteBottomFade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.258824), Color(1, 1, 1, 0.133333)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
 _data = {
 &"RESET": SubResource("Animation_bqqt6"),
+&"bottom_fade_blink": SubResource("Animation_oa1go"),
 &"fade_in": SubResource("Animation_ekxnf"),
 &"fade_out": SubResource("Animation_wu84c")
 }
@@ -166,6 +198,15 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="WhiteBottomFade" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.258824)
+layout_mode = 0
+offset_left = -295.0
+offset_top = 518.522
+offset_right = 1625.0
+offset_bottom = 718.522
+texture = ExtResource("3_rtw2f")
+
 [node name="FadeBackground" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -188,5 +229,8 @@ volume_db = 10.0
 stream = ExtResource("4_wu84c")
 volume_db = -10.0
 bus = &"SFX"
+
+[node name="Wind" parent="." instance=ExtResource("5_8ln24")]
+position = Vector2(648, 360)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5jeo6gaeysmo"]
+[gd_scene load_steps=16 format=3 uid="uid://c5jeo6gaeysmo"]
 
 [ext_resource type="Script" uid="uid://iglwvbqswlmc" path="res://scripts/hud.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://b70jc4hhj8gl7" path="res://assets/Objects/flag.png" id="1_oo0fn"]
 [ext_resource type="FontFile" uid="uid://bisxlfleqqvse" path="res://assets/Fonts/PixelOperator8-Bold.ttf" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://ck2hwtt78hkbv" path="res://assets/UI/map_guide.png" id="4_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://dc100wkgcd0em" path="res://assets/UI/Owlet_Monster_head.png" id="5_uo2fv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ysmq"]
 atlas = ExtResource("1_oo0fn")
@@ -106,3 +108,19 @@ text = "5"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MapGuide" type="TextureRect" parent="."]
+offset_left = 9.0
+offset_top = 176.0
+offset_right = 131.0
+offset_bottom = 566.0
+texture = ExtResource("4_6fi6k")
+
+[node name="PlayerHead" type="TextureRect" parent="MapGuide"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 334.0
+offset_right = 58.0
+offset_bottom = 366.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_uo2fv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://ber65bpgj31uh"]
+[gd_scene load_steps=86 format=4 uid="uid://ber65bpgj31uh"]
 
 [ext_resource type="Script" uid="uid://cpxurf0o22dvn" path="res://scripts/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://518ogvbxkfjl" path="res://assets/Tilesets/tileset_forest.png" id="2_lbhrr"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://mfpk0lxhpmyy" path="res://assets/Music/2. Whispers of Yesterday (Loop).ogg" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://cmxrtc44qc65r" path="res://scenes/dead_god.tscn" id="20_1kice"]
 [ext_resource type="Texture2D" uid="uid://e3kfxdwd8p5q" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Run_6.png" id="20_gxtfn"]
+[ext_resource type="Texture2D" uid="uid://congrkhlpalj7" path="res://assets/UI/gdb-xbox-2.png" id="20_nepv3"]
 [ext_resource type="Texture2D" uid="uid://b70jc4hhj8gl7" path="res://assets/Objects/flag.png" id="20_wljb1"]
 [ext_resource type="Texture2D" uid="uid://caqbn6hwqra3r" path="res://assets/Main Characters/2 Owlet_Monster/Owlet_Monster_Jump_8.png" id="21_twgab"]
 [ext_resource type="Texture2D" uid="uid://cl6is26boalkf" path="res://assets/UI/Keyboard Extras.png" id="22_02fa5"]
@@ -1086,7 +1087,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DownArrowKey:position")
+tracks/0/path = NodePath("PlatformDownTuto/DownArrowKey:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1194,7 +1195,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("SKey:position")
+tracks/9/path = NodePath("PlatformDownTuto/SKey:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1202,6 +1203,66 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(762, -581)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PlatformDownTuto/DownJoypadBtn:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(743, -581)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MoveTutorial/ControllerDirectionPad:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25.5, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MoveTutorial/ControllerJoystick:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("JumpTuto/DirectionPadUpBtn:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("JumpTuto/ABtn:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19.5, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v2yb1"]
@@ -1211,7 +1272,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DownArrowKey:position")
+tracks/0/path = NodePath("PlatformDownTuto/DownArrowKey:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1319,7 +1380,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("SKey:position")
+tracks/9/path = NodePath("PlatformDownTuto/SKey:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1327,6 +1388,66 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(762, -581), Vector2(762, -571)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PlatformDownTuto/DownJoypadBtn:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(743, -581), Vector2(743, -571)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MoveTutorial/ControllerDirectionPad:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25.5, 0), Vector2(25.5, 8)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MoveTutorial/ControllerJoystick:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 8)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("JumpTuto/DirectionPadUpBtn:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.0346994, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 3.5)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("JumpTuto/ABtn:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.0346994, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(19.5, 0), Vector2(19.5, 3.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxtfn"]
@@ -1343,6 +1464,9 @@ size = Vector2(137.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgl2t"]
 size = Vector2(144, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nepv3"]
+size = Vector2(241, 59.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sgl2t"]
 radius = 131.004
@@ -1561,7 +1685,9 @@ move_horizontal = true
 move_distance = 500
 move_time = 6.0
 
-[node name="DownArrowKey" type="Sprite2D" parent="."]
+[node name="PlatformDownTuto" type="Node2D" parent="."]
+
+[node name="DownArrowKey" type="Sprite2D" parent="PlatformDownTuto"]
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(724, -581)
 scale = Vector2(2, 2)
@@ -1569,13 +1695,21 @@ texture = ExtResource("31_qouja")
 region_enabled = true
 region_rect = Rect2(16.1378, 0.817131, 14.8644, 13.9184)
 
-[node name="SKey" type="Sprite2D" parent="."]
+[node name="SKey" type="Sprite2D" parent="PlatformDownTuto"]
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(762, -581)
 scale = Vector2(2, 2)
 texture = ExtResource("31_qouja")
 region_enabled = true
 region_rect = Rect2(33.0884, 65.7121, 12.9205, 12.3474)
+
+[node name="DownJoypadBtn" type="Sprite2D" parent="PlatformDownTuto"]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(743, -581)
+scale = Vector2(2, 2)
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(179.95, 81.8718, 8.05162, 11.1775)
 
 [node name="MoveTutorial" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
@@ -1613,6 +1747,17 @@ texture = ExtResource("31_qouja")
 region_enabled = true
 region_rect = Rect2(0.769314, 2.03767, 13.4772, 12.1713)
 
+[node name="ControllerJoystick" type="Sprite2D" parent="MoveTutorial"]
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(215.892, 71.7062, 16.2548, 16.3315)
+
+[node name="ControllerDirectionPad" type="Sprite2D" parent="MoveTutorial"]
+position = Vector2(25.5, 0)
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(131.773, 51.6491, 24.3326, 24.5843)
+
 [node name="JumpTuto" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(480, 520)
@@ -1634,6 +1779,17 @@ position = Vector2(30, 0)
 texture = ExtResource("22_02fa5")
 region_enabled = true
 region_rect = Rect2(65.1535, 34.0349, 29.9199, 12.0959)
+
+[node name="DirectionPadUpBtn" type="Sprite2D" parent="JumpTuto"]
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(163.902, 82.8224, 8.22385, 11.2794)
+
+[node name="ABtn" type="Sprite2D" parent="JumpTuto"]
+position = Vector2(19.5, 0)
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(16.8919, 48.9459, 14.2125, 14.0979)
 
 [node name="FlagTutorial" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
@@ -1725,6 +1881,7 @@ layer = 3
 visible = false
 
 [node name="FadeInOut" type="CanvasLayer" parent="Camera"]
+visible = false
 
 [node name="FadeBackground" type="ColorRect" parent="Camera/FadeInOut"]
 z_index = 1
@@ -1831,6 +1988,14 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DIntroFinalZone2"]
 shape = SubResource("RectangleShape2D_sgl2t")
 
+[node name="Area2DQuitTutorialUI" type="Area2D" parent="."]
+position = Vector2(130, -832)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DQuitTutorialUI"]
+position = Vector2(16.5, 38.75)
+shape = SubResource("RectangleShape2D_nepv3")
+
 [node name="DeadGod" parent="." instance=ExtResource("20_1kice")]
 position = Vector2(640, -6304)
 frame_progress = 0.69
@@ -1852,4 +2017,5 @@ debug_color = Color(0.808654, 0.0022273, 0.989388, 0.42)
 [connection signal="body_entered" from="Area2DIntroThirdZone" to="GameManager" method="_on_area_2d_intro_third_zone_body_entered"]
 [connection signal="body_entered" from="Area2DIntroFinalZone" to="GameManager" method="_on_area_2d_intro_final_zone_body_entered"]
 [connection signal="body_entered" from="Area2DIntroFinalZone2" to="GameManager" method="_on_area_2d_intro_final_zone_body_entered"]
+[connection signal="body_entered" from="Area2DQuitTutorialUI" to="GameManager" method="_on_area_2d_quit_tutorial_ui_body_entered"]
 [connection signal="body_entered" from="DeadGod/DeadGodArea2D" to="GameManager" method="_on_dead_god_area_2d_body_entered"]

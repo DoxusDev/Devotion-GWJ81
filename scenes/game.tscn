@@ -1941,7 +1941,6 @@ layer = 3
 visible = false
 
 [node name="FadeInOut" type="CanvasLayer" parent="Camera"]
-visible = false
 
 [node name="FadeBackground" type="ColorRect" parent="Camera/FadeInOut"]
 z_index = 1

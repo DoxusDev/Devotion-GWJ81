@@ -80,14 +80,6 @@ animations = [{
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_5ysmq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = 1130.0
-offset_top = 25.0
-offset_right = 1246.0
-offset_bottom = 95.0
-color = Color(0.168627, 0.168627, 0.168627, 0.364706)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1159, 58)
 scale = Vector2(2, 2)

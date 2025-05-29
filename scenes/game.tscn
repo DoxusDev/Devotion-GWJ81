@@ -1264,6 +1264,30 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(19.5, 0)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("FlagTutorial/XBtn:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(21.2, 2.5)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TeleportFlagTutorial/LtBtn:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(37, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_v2yb1"]
 resource_name = "keys_animation"
@@ -1448,6 +1472,30 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(19.5, 0), Vector2(19.5, 3.5)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("FlagTutorial/XBtn:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21.2, 2.5), Vector2(21.2, 5.8)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TeleportFlagTutorial/LtBtn:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(37, 2), Vector2(37, 5.4)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxtfn"]
@@ -1807,6 +1855,12 @@ texture = ExtResource("31_qouja")
 region_enabled = true
 region_rect = Rect2(64.9564, 33.7718, 13.4274, 12.6079)
 
+[node name="XBtn" type="Sprite2D" parent="FlagTutorial"]
+position = Vector2(21.2, 2.5)
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(16.8766, 32.8417, 14.2125, 14.2698)
+
 [node name="TeleportFlagTutorial" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
 position = Vector2(256, 101)
@@ -1834,6 +1888,12 @@ position = Vector2(-11.6, 3.6)
 sprite_frames = SubResource("SpriteFrames_nepv3")
 autoplay = "default"
 frame_progress = 0.874909
+
+[node name="LtBtn" type="Sprite2D" parent="TeleportFlagTutorial"]
+position = Vector2(37, 2)
+texture = ExtResource("20_nepv3")
+region_enabled = true
+region_rect = Rect2(335.92, 48.9559, 16.1979, 14.114)
 
 [node name="Player" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(159, 673)

@@ -28,6 +28,10 @@ extends Node
 @onready var up_arrow_key: Sprite2D = $"../MoveTutorial/UpArrowKey"
 @onready var up_arrow_key_jump: Sprite2D = $"../JumpTuto/UpArrowKey"
 @onready var space_key: Sprite2D = $"../JumpTuto/SpaceKey"
+@onready var e_key: Sprite2D = $"../FlagTutorial/EKey"
+@onready var x_btn: Sprite2D = $"../FlagTutorial/XBtn"
+@onready var q_key: Sprite2D = $"../TeleportFlagTutorial/QKey"
+@onready var lt_btn: Sprite2D = $"../TeleportFlagTutorial/LtBtn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,12 +52,16 @@ func _input(event: InputEvent) -> void:
 		up_arrow_key.visible = false
 		up_arrow_key_jump.visible = false
 		space_key.visible = false
+		e_key.visible = false
+		q_key.visible = false
 		
 		controller_direction_pad.visible = true
 		controller_joystick.visible = true
 		down_joypad_btn.visible = true
 		direction_pad_up_btn.visible = true
 		a_btn.visible = true
+		x_btn.visible = true
+		lt_btn.visible = true
 	else:
 		down_arrow_key.visible = true
 		s_key.visible = true
@@ -63,12 +71,16 @@ func _input(event: InputEvent) -> void:
 		up_arrow_key.visible = true
 		up_arrow_key_jump.visible = true
 		space_key.visible = true
+		e_key.visible = true
+		q_key.visible = true
 		
 		controller_direction_pad.visible = false
 		controller_joystick.visible = false
 		down_joypad_btn.visible = false
 		direction_pad_up_btn.visible = false
 		a_btn.visible = false
+		x_btn.visible = false
+		lt_btn.visible = false
 
 func _on_area_2d_intro_second_zone_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

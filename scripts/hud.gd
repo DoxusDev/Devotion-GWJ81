@@ -19,7 +19,12 @@ func _process(delta: float) -> void:
 		return
 	
 	if player_node.flags_left != 5:
-		flag_count.text = str(player_node.get_flags())
+		if player_node.get_flags() == 1:
+			flag_count.text = "[shake rate=20.0 level=5][color=#e63946]" + str(player_node.get_flags()) + "[/color][/shake]"
+		elif player_node.get_flags() == 0:
+			flag_count.text = str(player_node.get_flags())
+		else:
+			flag_count.text = "[wave]" + str(player_node.get_flags()) + "[/wave]"
 		
 	var player_y = player_node.global_position.y
 	var t = inverse_lerp(world_min_y, world_max_y, player_y)

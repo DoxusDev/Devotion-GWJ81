@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu6uofeswmp3y"]
+[gd_scene load_steps=13 format=3 uid="uid://cu6uofeswmp3y"]
 
 [ext_resource type="FontFile" uid="uid://bisxlfleqqvse" path="res://assets/Fonts/PixelOperator8-Bold.ttf" id="1_ioskq"]
 [ext_resource type="Script" uid="uid://cdxidcpvbnc7e" path="res://scripts/intro.gd" id="1_yjqpq"]
 [ext_resource type="AudioStream" uid="uid://b6uwnrd2aehdr" path="res://assets/Music/1. Echoes of Solitude (Loop).ogg" id="3_4bx60"]
+[ext_resource type="Texture2D" uid="uid://cl6is26boalkf" path="res://assets/UI/Keyboard Extras.png" id="4_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://congrkhlpalj7" path="res://assets/UI/gdb-xbox-2.png" id="5_es01l"]
 
 [sub_resource type="Animation" id="Animation_4bx60"]
 length = 0.001
@@ -133,10 +135,125 @@ tracks/4/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_0naf5"]
+resource_name = "skip"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IntroMusic:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -40.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2l1n"]
 _data = {
 &"RESET": SubResource("Animation_4bx60"),
-&"intro": SubResource("Animation_yjqpq")
+&"intro": SubResource("Animation_yjqpq"),
+&"skip": SubResource("Animation_0naf5")
+}
+
+[sub_resource type="Animation" id="Animation_wfs7u"]
+resource_name = "blink"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkipKey:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkipBtn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkipText:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
+}
+
+[sub_resource type="Animation" id="Animation_es01l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkipKey:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkipBtn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkipText:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0naf5"]
+_data = {
+&"RESET": SubResource("Animation_es01l"),
+&"blink": SubResource("Animation_wfs7u")
 }
 
 [node name="Intro" type="Control"]
@@ -171,6 +288,32 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SkipKey" type="Sprite2D" parent="."]
+position = Vector2(1168, 677)
+scale = Vector2(2, 2)
+texture = ExtResource("4_wfs7u")
+region_enabled = true
+region_rect = Rect2(38.9202, 1.92176, 18.1591, 12.1257)
+
+[node name="SkipBtn" type="Sprite2D" parent="."]
+position = Vector2(1168, 677)
+scale = Vector2(2, 2)
+texture = ExtResource("5_es01l")
+region_enabled = true
+region_rect = Rect2(450.906, 114.914, 10.1771, 10.177)
+
+[node name="SkipText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 642.0
+offset_right = 1262.0
+offset_bottom = 712.0
+theme_override_fonts/normal_font = ExtResource("1_ioskq")
+bbcode_enabled = true
+text = "SKIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BackgroundFade" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -185,6 +328,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_i2l1n")
 }
 autoplay = "intro"
+
+[node name="UIEffects" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0naf5")
+}
+autoplay = "blink"
 
 [node name="IntroMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_4bx60")

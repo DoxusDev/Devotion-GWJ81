@@ -48,7 +48,6 @@ func _physics_process(delta: float) -> void:
 		coyote_time_left = 0.0
 	
 	if Input.is_action_pressed("down") and is_on_floor():
-		# Fuerza una pequeña caída para atravesar la plataforma
 		global_position.y += 2
 	
 	if Input.is_action_pressed("teleport") and is_on_floor() and not last_flag_position == Vector2.ZERO:
